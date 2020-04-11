@@ -11,7 +11,6 @@ __status__ = "Production"
 
 import json
 import re
-import os
 
 #from treatment.scraping.jobs_index import scrap_jobs
 from treatment.scraping.jobs_index import scrap_jobs

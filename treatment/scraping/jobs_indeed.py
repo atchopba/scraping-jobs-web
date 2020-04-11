@@ -17,7 +17,6 @@ from bs4 import BeautifulSoup
 from time import sleep
 from random import randint
 from time import time
-from IPython.display import clear_output
 from warnings import warn
 
 # pour transformer les données obtenues
@@ -65,8 +64,6 @@ def scrap_job(arr_jobs, s_job, city, num_dpt, type_contract):
         ### afficher les informations sur les requêtes
         requests += 1 # incrémentation du nombre de requête
         elapsed_time = time() - start_time
-        ### print('Request: {}; Frequency: {} requests/s'.format(requests, requests/elapsed_time))
-        ### clear_output(wait=True)
         
         ### avertir si le code status est différent de 200
         if response.status_code != 200:

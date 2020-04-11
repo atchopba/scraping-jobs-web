@@ -7,7 +7,7 @@ MAINTAINER "Who I am <atchopba@gmail.com>"
 # We copy the content of the directory to /opt/app in the container
 # COPY . /opt/app
 
-ADD *.py /
+COPY . /
 ADD requirements.txt /
 
 #
@@ -18,4 +18,4 @@ RUN pip install -r requirements.txt
 WORKDIR .
 
 # We execute by default the jobs_index.py file
-ENTRYPOINT ["python", "./jobs_index.py"]
+RUN python -m flask run

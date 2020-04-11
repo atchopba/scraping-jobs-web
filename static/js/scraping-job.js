@@ -57,16 +57,11 @@ $(document).ready(function(){
     			contract: $("#searchcontract").val().trim()
     		},
     		success : function(data) {
-    			console.log("=> btnsearch");
-                console.log(data);
     			$("#boxresult").html(data);
     		},
     		error: function(result, status, error) {
 				alert("Une erreur est survenue. Veuillez ressayer!");
-                console.log('=> error : ');
-                console.log(error);
-                console.log("=> result : ");
-                console.log(result);
+                console.log('=> error : ', error);
 			},
     		complete: function() {
 
