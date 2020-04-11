@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+ 
+  <head>
+ 
+    <!-- En-tête du document  -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+    <!-- Balise meta  -->
+    <meta name="title" content="Titre de la page" />
+    <meta name="description" content="description de la page" />
+    <meta name="keywords" content="mots-clé1, mots-clé2, ..." />
+   
+    <!-- Indexer et suivre -->
+    <meta name="robots" content="index,follow" />
+   
+    <!--  Relier une feuille CSS externe  -->
+    <!-- <link rel='stylesheet' href='votre-fichier.css' type='text/css' /> -->
+   
+    <!-- Incorporez du CSS dans la page  -->
+    <style type="text/css" media="screen">
+      p { color:red; }
+    </style>
+   
+    <!-- Relier un fichier JavaScript  -->
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/jquery.autocomplete.min.js"></script>
+    -->
+    <!-- Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- <script src="/js/scraping-job.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scraping-job.js') }}"></script>
+   
+    <noscript>La balise SCRIPT s'accompagne souvent de sa balise inverse : NOSCRIPT. Cette dernière contient un message à afficher si le script n'est pas supporté. Vous n'est pas obligé de mettre cette balise.
+    </noscript>
+  </head>
+ 
+ 
+  <body>
+ 
+    <!-- CORPS DE LA PAGE  -->
+    <h3>Bienvenue sur le portail du job</h3>
+    <p>Tu es en France et tu cherches un job! Fais ta recherche ici !</p>
+    <p>Recherche sur (indeed.fr, monster.fr, apec.fr)</p>
+    
+    <div id="boxsearch" class="class-search">
+        <input type="text" id="searchlib" name="searchlib" value="" placeholder="Libellé de la recherche" autocomplete="false" size="50" />
+        <input type="text" id="searchcity" name="searchcity" value="" placeholder="Ville (Département)" autocomplete="false" />
+        <input type="hidden" id="searchnumdpt" name="searchnumdpt" value="" placeholder="" autocomplete="false" />
+        <select id="searchcontract" name="searchcontract">
+            <option value=''>--------</option>
+            <option value="free">Ind&eacute;pendant</option>
+            <option value="ints">Stage</option>
+            <option value="perm">CDI</option>
+            <option value="full">Temps plein</option>
+        </select>
+        <input type="button" id="btnsearch" name="btnsearch" value="Rechercher" />
+    </div>
+
+    <div id="boxresult" class="class-result">
+
+    </div>
+ 
+  </body>
+
+</html>
