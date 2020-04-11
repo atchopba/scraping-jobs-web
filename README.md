@@ -1,5 +1,3 @@
-python -m flask run
-
 # Project Title
 
 Extraction of job offers from indeed.fr, apec.fr, monster.fr... in an IHM.
