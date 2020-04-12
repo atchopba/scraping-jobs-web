@@ -30,18 +30,21 @@ Use with Docker http://www.docker.io
 
 To build an image with docker is pretty simple:
 ```
-docker build -t jobs-cli .
+docker build -t jobs-cli-web .
 ```
 
 ## Running the tests
 
 Then to run that image and attach to it at the same time:
 ```
-docker run jobs-cli 
+docker run -p 5000:5000 jobs-cli-web
 ```
 
-Go to your web navigator: http://127.0.0.1:5000/
+Go to your web navigator: http://localhost:5000/
 
 ## License & copyright
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE.md](LICENSE.md) file for details
+
+====
+docker run --network host --publish 5000:5000 jobs-cli 

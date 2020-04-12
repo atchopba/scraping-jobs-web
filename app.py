@@ -20,8 +20,8 @@ from treatment.data_treatment import extract_city_json, scraping_jobs
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
+@app.route("/")
+def hello():
     return render_template('index.html')
 
 
@@ -45,5 +45,5 @@ def scraping_job():
     return resp
 
 
-if __name__ == 'main':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')

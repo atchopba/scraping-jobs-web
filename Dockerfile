@@ -4,18 +4,16 @@ FROM python:3.7.7
 # Information of the maintainer of this file
 MAINTAINER "Who I am <atchopba@gmail.com>"
 
-# We copy the content of the directory to /opt/app in the container
-# COPY . /opt/app
+RUN mkdir /app
 
-COPY . /
-ADD requirements.txt /
+WORKDIR /app
 
-#
+ADD . /app/
+
 RUN python -m pip install --upgrade pip
+
 RUN pip install -r requirements.txt
 
-# We change of directory to /opt/app
-WORKDIR .
+EXPOSE 5000
 
-# We execute by default the jobs_index.py file
-RUN python -m flask run
+CMD ["python", "app.py"]
