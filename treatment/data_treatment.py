@@ -16,7 +16,6 @@ import re
 from treatment.scraping.jobs_index import scrap_jobs
 
 CITIES_JSON_FILE = "./static/data/json/cities.json"
-SCRAPING_PY_FILE = "./treatment/scraping/job_index.py"
 
 
 def extract_city_json(city_name):
@@ -46,7 +45,7 @@ def scraping_jobs(query, city, contract):
     """
     extract jobs with python scrpit
     """
-    numdpt_regex = re.compile(r'\([0+9]{2}\)')
+    numdpt_regex = re.compile(r'\([0-9]{2}\)')
     numdpt_regex_search = numdpt_regex.search(city)
     numdpt = "44"
     if numdpt_regex_search:
@@ -57,7 +56,7 @@ def scraping_jobs(query, city, contract):
         city = tmp_city[0]
     #
     jobs_dict = []
-    # scrap job    
+    # scrap job  
     jobs_dict = json.loads(scrap_jobs(query, city, numdpt, contract))
     #print(jobs_dict[0])
     ### print(jobs_dict[0]["salary"])
