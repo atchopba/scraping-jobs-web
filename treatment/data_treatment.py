@@ -58,8 +58,7 @@ def scraping_jobs(query, city, contract):
     jobs_dict = []
     # scrap job  
     jobs_dict = json.loads(scrap_jobs(query, city, numdpt, contract))
-    #print(jobs_dict[0])
-    ### print(jobs_dict[0]["salary"])
+    #
     return_html = ""
     # check if jobs found
     if len(jobs_dict) > 0:
