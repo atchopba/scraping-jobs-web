@@ -1,4 +1,4 @@
-# Project Title
+# scraping-jobs-web
 
 Extraction of job offers from indeed.fr, apec.fr, monster.fr... in an IHM.
 
