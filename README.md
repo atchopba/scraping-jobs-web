@@ -1,18 +1,19 @@
-# scraping-jobs-web
+# Overview
 
-Extraction of job offers from indeed.fr, apec.fr, monster.fr... in an IHM.
+Scraping jobs allow to extract job offers from majors job boards (currently, indeed.fr, apec.fr, monster.fr), display the results in the interface. More importantly, it provides on top of the collected data a simple and unified job search.
 
-## What is this repository for? 
+You can easily search for jobs using only key parameters, including: 
+- the title of the job you are looking for,
+- the name of city (in France) and the code of the department in which the city is located with autocompletion functionality,
+- the type of contract you want.
 
-Scraping jobs is the extraction of key information about jobs through a search on a site. Here, there are: apec.fr, indeed.fr, monster.fr
+## Benefits 
 
-## Benefices 
-
-* Make it easier to find a job
+* Make it easier to find a job.
 
 * Gather information from several sites.
 
-* Provide an IHM
+* Provide an interface.
 
 ## Getting Started
 
