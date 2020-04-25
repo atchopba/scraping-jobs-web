@@ -4,7 +4,7 @@ $(document).ready(function(){
     $("#searchcity").autocomplete({
 
         source: function(request, response) {
-            // console.log("=> searchcity autocomplete init");
+            
             $.ajax({
                 url: "/extract_city",
                 type: 'POST',
@@ -33,6 +33,16 @@ $(document).ready(function(){
             //console.log("=> select : ", ui);
         }
     });
+	
+	var timer_ = function() {
+		var duration = moment.duration(55000, 'milliseconds');
+		var interval = 1000;
+
+		setInterval(function(){
+		  duration = moment.duration(duration - interval, 'milliseconds');
+			$('.countdown').text(duration.minutes() + ":" + duration.seconds())
+		}, interval);
+	}
 
 
     // bouton rechercher
@@ -46,7 +56,8 @@ $(document).ready(function(){
             return;
         }
 
-        $("#boxresult").html("recherche en cours ...");
+        $("#boxresult").html("recherche en cours ... Attendez <span class='countdown'>0:55</span>s!");
+		timer_();
 
     	$.ajax({
     		url: "/scraping_job",
@@ -62,10 +73,7 @@ $(document).ready(function(){
     		error: function(result, status, error) {
 				alert("Une erreur est survenue. Veuillez ressayer!");
                 console.log('=> error : ', error);
-			},
-    		complete: function() {
-
-    		}
+			}
     	});
 
   	});
