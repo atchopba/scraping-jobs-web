@@ -29,15 +29,10 @@ Use with Docker http://www.docker.io
 
 ### Installation
 
-Pull Docker image on your computer:
+Pull Docker image on your computer and run:
 ```
 docker pull atchopba/jobs-web-cli
-```
 
-## Running the tests
-
-Then to run that image and attach to it at the same time:
-```
 docker run -d -p 5000:5000 --name jobs-web-cli atchopba/jobs-web-cli
 ```
 
