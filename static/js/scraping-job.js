@@ -33,17 +33,6 @@ $(document).ready(function(){
             //console.log("=> select : ", ui);
         }
     });
-	
-	var timer_ = function() {
-		var duration = moment.duration(55000, 'milliseconds');
-		var interval = 1000;
-
-		setInterval(function(){
-		  duration = moment.duration(duration - interval, 'milliseconds');
-			$('.countdown').text(duration.minutes() + ":" + duration.seconds())
-		}, interval);
-	}
-
 
     // bouton rechercher
 	$("#btnsearch").click(function() {
@@ -56,8 +45,7 @@ $(document).ready(function(){
             return;
         }
 
-        $("#boxresult").html("recherche en cours ... Attendez <span class='countdown'>0:55</span>s!");
-		timer_();
+        $("#boxresult").html("recherche en cours ... 1min max de patience!");
 
     	$.ajax({
     		url: "/scraping_job",
