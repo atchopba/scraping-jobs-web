@@ -4,15 +4,13 @@ FROM python:3.7.7
 # Information of the maintainer of this file
 MAINTAINER "Who I am <atchopba@gmail.com>"
 
-RUN mkdir /app
+ADD . /
 
-WORKDIR /app
-
-ADD . /app/
-
-RUN python -m pip install --upgrade pip
+RUN python -m pip install --upgrade pip 
 
 RUN pip install -r requirements.txt
+
+WORKDIR .
 
 EXPOSE 5000
 
