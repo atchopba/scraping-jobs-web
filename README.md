@@ -31,14 +31,14 @@ Use with Docker http://www.docker.io
 
 To build an image with docker is pretty simple:
 ```
-docker build -t jobs-cli-web .
+docker pull atchopba/jobs-web-cli
 ```
 
 ## Running the tests
 
 Then to run that image and attach to it at the same time:
 ```
-docker run -p 5000:5000 jobs-cli-web
+docker run -d -p 5000:5000 --name jobs-web-cli atchopba/jobs-web-cli:v0.0.1
 ```
 
 Go to your web browser: http://localhost:5000/
@@ -48,7 +48,7 @@ Go to your web browser: http://localhost:5000/
 
 ![Page index](static/images/01-search.png)
 
-2. When you type four letters, the code goes to a json file for the city. That's what justifies the search time.
+2. When you type 4 letters, the code goes to a json file for the city => You ought to wait 6-11s. That's what justifies the search time. 
 
 ![Page index](static/images/02-search.png)
 
@@ -56,7 +56,7 @@ Go to your web browser: http://localhost:5000/
 
 ![Page index](static/images/03-search.png)
 
-4. When you validate your search, the code goes looking for jobs on apec.fr/Indeed.fr/monster.fr. So you have to wait for the search to be done.
+4. When you validate your search, the code goes looking for jobs on apec.fr/Indeed.fr/monster.fr by using a web service based on scraping-jobs. So you have to wait for the search to be done. You ought to wait at least 55s.
 
 ![Page index](static/images/04-search.png)
 
