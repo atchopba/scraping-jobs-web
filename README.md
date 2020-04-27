@@ -35,8 +35,15 @@ docker pull atchopba/jobs-web-cli
 
 docker run -d -p 5000:5000 --name jobs-web-cli atchopba/jobs-web-cli
 ```
+OR 
 
-Go to your web browser: http://localhost:5000/
+You can build an image with docker and run :
+```
+docker build -t jobs-cli-web .
+
+docker run -p 5000:5000 jobs-cli-web
+```
+Finally, go to your web browser: http://localhost:5000/
 
 #### Screenshots
 1. When lauching page in your web browser. 
