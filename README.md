@@ -37,7 +37,7 @@ docker run -d -p 5000:5000 --name jobs-web-cli atchopba/jobs-web-cli
 ```
 OR 
 
-You can build an image with docker and run :
+You can build a Dcker image on your computer and run :
 ```
 docker build -t jobs-cli-web .
 
