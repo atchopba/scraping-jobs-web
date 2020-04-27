@@ -39,9 +39,9 @@ OR
 
 You can build a Dcker image on your computer and run :
 ```
-docker build -t jobs-cli-web .
+docker build -t jobs-web-cli .
 
-docker run -p 5000:5000 jobs-cli-web
+docker run -p 5000:5000 jobs-web-cli
 ```
 Finally, go to your web browser: http://localhost:5000/
 
