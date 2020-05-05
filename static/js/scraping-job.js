@@ -18,8 +18,7 @@ $(document).ready(function(){
                     }));
                 },
                 error: function(result, status, error) {
-                    console.log('Extract city rror : ');
-                    console.log(error);
+                    console.log('Extract city error : ', error);
                 }
             });
 

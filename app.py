@@ -14,7 +14,7 @@
 from flask import Flask, request, make_response
 from flask import render_template
 
-from treatment.data_treatment import extract_city_json, scraping_jobs
+from treatment.data_treatment import extract_city_json, get_jobs
 
 #------------------------------------------------------------------------------
 app = Flask(__name__)
@@ -39,7 +39,7 @@ def scraping_job():
     q = request.form['q']
     city = request.form['city']
     contract = request.form['contract']
-    resp = make_response(scraping_jobs(q, city, contract))
+    resp = make_response(get_jobs(q, city, contract))
     resp.status_code = 200
     resp.headers["Access-Control-Allow-Origin"] = '*'
     return resp

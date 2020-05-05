@@ -12,8 +12,6 @@
 import json
 import re
 
-#from treatment.scraping.jobs_index import scrap_jobs
-from treatment.scraping.jobs_index import scrap_jobs
 
 CITIES_JSON_FILE = "./static/data/json/cities.json"
 
@@ -41,7 +39,43 @@ def extract_city_json(city_name):
     return json.dumps(city_found_dict)
 
 
-def scraping_jobs(query, city, contract):
+def scrap_all_jobs(s_job, city, code_dpt, type_contract):
+    #
+    import treatment.common as jc
+    from treatment.scraping.jobs_apec import scraping_jobs_apec
+    from treatment.scraping.jobs_indeed import scraping_jobs_indeed
+    from treatment.scraping.jobs_monster import scraping_jobs_monster
+    
+    # array of jobs
+    dict_jobs = []
+    
+    ## apec.fr
+    sjapec = scraping_jobs_apec(s_job, type_contract)
+    sjapec.set_code_dpt(code_dpt)
+    dict_tmp = sjapec.scrap_job()
+    if len(dict_tmp) > 0:
+        dict_jobs += dict_tmp
+    
+    ## indeed.fr
+    sjindeed = scraping_jobs_indeed(s_job, type_contract)
+    sjindeed.set_city(city)
+    sjindeed.set_code_dpt(code_dpt)
+    dict_tmp = sjindeed.scrap_job()
+    if len(dict_tmp) > 0:
+        dict_jobs += dict_tmp
+    
+    ## monster.fr
+    sjmonster = scraping_jobs_monster(s_job, type_contract)
+    sjmonster.set_city(city)
+    dict_tmp = sjmonster.scrap_job()
+    if len(dict_tmp) > 0:
+        dict_jobs += dict_tmp
+    
+    ### impression des jobs en json
+    return jc.jprint(dict_jobs)
+
+
+def get_jobs(query, city, contract):
     """
     extract jobs with python scrpit
     """
@@ -57,7 +91,7 @@ def scraping_jobs(query, city, contract):
     #
     jobs_dict = []
     # scrap job  
-    jobs_dict = json.loads(scrap_jobs(query, city, numdpt, contract))
+    jobs_dict = json.loads(scrap_all_jobs(query, city, numdpt, contract))
     #
     return_html = ""
     # check if jobs found
