@@ -18,6 +18,6 @@ class scraping_jobs(metaclass=ABCMeta):
         self.type_contract = type_contract
     
     @abstractmethod
-    def scrap_job(self, dict_jobs, s_job, type_contract):
+    def scrap_job(self):
         pass
     

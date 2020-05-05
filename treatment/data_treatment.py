@@ -12,7 +12,7 @@
 import json
 import re
 
-from treatment.index import scraping_index
+from treatment.index import scraping_index, Params
 
 CITIES_JSON_FILE = "./static/data/json/cities.json"
 
@@ -56,7 +56,8 @@ def get_jobs(query, city, contract):
     #
     jobs_dict = []
     # scrap job  
-    jobs_dict = json.loads(scraping_index(query, city, numdpt, contract).scrap_all_jobs())
+    params = Params(query, city, numdpt, contract)
+    jobs_dict = json.loads(scraping_index(params).scrap_all_jobs())
     #
     return_html = ""
     # check if jobs found

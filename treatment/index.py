@@ -10,13 +10,17 @@
 # __status__ = "Production"
 # -*- coding: utf-8 -*-
 
+from collections import namedtuple
+
+Params = namedtuple("Params", "s_job city code_dpt type_contract")
+
 class scraping_index(object):
     
-    def __init__(self, s_job, city, code_dpt, type_contract):
-        self.s_job = s_job
-        self.city = city
-        self.code_dpt = code_dpt
-        self.type_contract = type_contract
+    def __init__(self, params):
+        self.s_job = params.s_job
+        self.city = params.city
+        self.code_dpt = params.code_dpt
+        self.type_contract = params.type_contract
     
     def scrap_all_jobs(self):
         #
