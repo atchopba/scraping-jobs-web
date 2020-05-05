@@ -18,7 +18,7 @@ $(document).ready(function(){
                     }));
                 },
                 error: function(result, status, error) {
-                    console.log('Extract city error : ', error);
+                    alert("Erreur de la recherche de la ville");
                 }
             });
 
@@ -29,7 +29,6 @@ $(document).ready(function(){
             my : 'top'
         },
         select : function(event, ui){ // lors de la sélection d'une proposition
-            //console.log("=> select : ", ui);
         }
     });
 
@@ -59,7 +58,6 @@ $(document).ready(function(){
     		},
     		error: function(result, status, error) {
 				alert("Une erreur est survenue. Veuillez ressayer!");
-                console.log('=> error : ', error);
 			}
     	});
 
