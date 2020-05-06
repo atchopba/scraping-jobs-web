@@ -15,7 +15,6 @@ from requests import post
 # pour le contrôle des requêtes
 from time import sleep
 from random import randint
-from time import time
 
 # pour gérer json
 import json
@@ -56,7 +55,6 @@ class scraping_jobs_apec(scraping_jobs):
         ### pages à parcourir
         pages = [str(i) for i in range(0, jc.NB_PAGE)]
         requests = 0
-        start_time = time()
         
         dict_jobs = []
         
@@ -88,9 +86,7 @@ class scraping_jobs_apec(scraping_jobs):
             sleep(randint(8, 15))
             
             ### afficher les informations sur les requêtes
-            requests += 1 # incrémentation du nombre de requête
-            elapsed_time = time() - start_time
-            
+            requests += 1 # incrémentation du nombre de requête         
             
             ### stopper quand les requêtes atteignent le quota
             if requests > jc.NB_REQUETE:
