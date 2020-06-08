@@ -12,7 +12,7 @@
 import json
 import re
 
-from treatment.index import scraping_index, Params
+from core.index import scraping_index, Params
 
 CITIES_JSON_FILE = "./static/data/json/cities.json"
 

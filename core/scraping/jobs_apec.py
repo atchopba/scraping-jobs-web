@@ -19,10 +19,10 @@ from random import randint
 # pour gérer json
 import json
 
-from treatment.scraping.jobs import scraping_jobs
+from core.scraping.jobs import scraping_jobs
 
 # pour transformer les données obtenues
-import treatment.common as jc
+import core.common as jc
 
 
 class scraping_jobs_apec(scraping_jobs):

@@ -24,10 +24,10 @@ class scraping_index(object):
     
     def scrap_all_jobs(self):
         #
-        import treatment.common as jc
-        from treatment.scraping.jobs_apec import scraping_jobs_apec
-        from treatment.scraping.jobs_indeed import scraping_jobs_indeed
-        from treatment.scraping.jobs_monster import scraping_jobs_monster
+        import core.common as jc
+        from core.scraping.jobs_apec import scraping_jobs_apec
+        from core.scraping.jobs_indeed import scraping_jobs_indeed
+        from core.scraping.jobs_monster import scraping_jobs_monster
         
         # array of jobs
         dict_jobs = []

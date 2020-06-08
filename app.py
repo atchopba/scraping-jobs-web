@@ -14,7 +14,7 @@
 from flask import Flask, request, make_response
 from flask import render_template
 
-from treatment.data_treatment import extract_city_json, get_jobs
+from core.data_treatment import extract_city_json, get_jobs
 
 #------------------------------------------------------------------------------
 app = Flask(__name__)

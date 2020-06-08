@@ -13,10 +13,10 @@
 from requests import get
 from bs4 import BeautifulSoup
 
-from treatment.scraping.jobs import scraping_jobs
+from core.scraping.jobs import scraping_jobs
 
 # pour transformer les données obtenues
-import treatment.common as jc
+import core.common as jc
 
 
 class scraping_jobs_monster(scraping_jobs):
