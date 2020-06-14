@@ -92,6 +92,7 @@ class scraping_jobs_apec(scraping_jobs):
             if requests > jc.NB_REQUETE:
                 #warn('Nombre de requêtes trop important')
                 break
+            
             try:
                 json_data = json.loads(content)
             except:
