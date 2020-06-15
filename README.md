@@ -48,23 +48,23 @@ Finally, go to your web browser: http://localhost:5000/
 #### Screenshots
 1. When lauching page in your web browser. 
 
-![Page index](static/images/01-search.png)
+![Page index](scraping_jobs_web/static/images/01-search.png)
 
 2. When you type 4 letters, the code goes to a json file for the city => You ought to wait 6-11s. That's what justifies the search time. 
 
-![Page index](static/images/02-search.png)
+![Page index](scraping_jobs_web/static/images/02-search.png)
 
 3. Then, many propositions display. Choose one.
 
-![Page index](static/images/03-search.png)
+![Page index](scraping_jobs_web/static/images/03-search.png)
 
 4. When you validate your search, the code goes looking for jobs on apec.fr/Indeed.fr/monster.fr by using a web service based on scraping-jobs. So you have to wait for the search to be done. You ought to wait at least 55s-1min.
 
-![Page index](static/images/04-search.png)
+![Page index](scraping_jobs_web/static/images/04-search.png)
 
 5. Finally, you got the search results.
 
-![Page index](static/images/05-search.png)
+![Page index](scraping_jobs_web/static/images/05-search.png)
 
 ## License & copyright
 
