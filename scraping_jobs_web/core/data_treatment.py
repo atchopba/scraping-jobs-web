@@ -12,9 +12,9 @@
 import json
 import re
 
-from core.index import scraping_index, Params
+from scraping_jobs_web.core.index import scraping_index, Params
 
-CITIES_JSON_FILE = "./static/data/json/cities.json"
+CITIES_JSON_FILE = "./scraping_jobs_web/static/data/json/cities.json"
 
 
 def extract_city_json(city_name):

@@ -19,14 +19,13 @@ from random import randint
 # pour gérer json
 import json
 
-from core.scraping.jobs import scraping_jobs
+from scraping_jobs_web.core.scraping.jobs import scraping_jobs
 
 # pour transformer les données obtenues
-import core.common as jc
+import scraping_jobs_web.core.common as jc
 
 
 class scraping_jobs_apec(scraping_jobs):
-    
     #
     def set_code_dpt(self, code_dpt):
         self.code_dpt = code_dpt

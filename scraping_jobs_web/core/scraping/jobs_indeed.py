@@ -18,14 +18,13 @@ from time import sleep
 from random import randint
 from time import time
 
-from core.scraping.jobs import scraping_jobs
+from scraping_jobs_web.core.scraping.jobs import scraping_jobs
 
 # pour transformer les données obtenues
-import core.common as jc
+import scraping_jobs_web.core.common as jc
 
 
 class scraping_jobs_indeed(scraping_jobs):
-    
     #
     def set_code_dpt(self, code_dpt):
         self.code_dpt = code_dpt

@@ -13,14 +13,13 @@
 from requests import get
 from bs4 import BeautifulSoup
 
-from core.scraping.jobs import scraping_jobs
+from scraping_jobs_web.core.scraping.jobs import scraping_jobs
 
 # pour transformer les données obtenues
-import core.common as jc
+import scraping_jobs_web.core.common as jc
 
 
 class scraping_jobs_monster(scraping_jobs):
-    
     #
     def set_city(self, city):
         self.city = city
