@@ -22,7 +22,7 @@ with open(path.join(path_, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="scraping_jobs_web",
+    name="scraping-jobs-web",
     version="0.0.1",
     description="Scraping jobs on the web",
     long_description=long_description,
