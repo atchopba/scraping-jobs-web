@@ -36,9 +36,10 @@ class scraping_jobs_apec(scraping_jobs):
         # les termes doivent être séparés par ' ' ou '%20'
         param_search_words = self.s_job #'developpeur aws'
         # le numéro du département
-        param_search_location = self.code_dpt
+        param_search_location = self.code_dpt[1:len(self.code_dpt)-1]
+        
         # type de contrat du job
-        param_type_contract = self.type_contract #''
+        param_type_contract = '' #self.type_contract #''
         
         ### type de job
         arr_type_contract = {
@@ -54,6 +55,7 @@ class scraping_jobs_apec(scraping_jobs):
         ### pages à parcourir
         pages = [str(i) for i in range(0, jc.NB_PAGE)]
         requests = 0
+        #start_time = time()
         
         dict_jobs = []
         
@@ -62,22 +64,35 @@ class scraping_jobs_apec(scraping_jobs):
             #
             root_path = 'https://www.apec.fr/cms/webservices/rechercheOffre'
             payload = {
-                'lieux': [param_search_location],
-                'typeClient': 'CADRE',
-                'sorts' : [{
-                    'type': 'SCORE',
-                    'direction': 'DESCENDING'
-                }],
-                'pagination': {
-                    'range': 20,
-                    'startIndex': page
+                "lieux": [param_search_location],
+                "fonctions": [],
+                "statutPoste": [],
+                "typesContrat": [],
+                "typesConvention": [],
+                "niveauxExperience": [],
+                "idsEtablissement": [],
+                "secteursActivite": [],
+                "typesTeletravail": [],
+                "idNomZonesDeplacement": [],
+                "positionNumbersExcluded": [],
+                "typeClient": "CADRE",
+                "sorts": [{
+                        "type": "SCORE",
+                        "direction": "DESCENDING"
+                    }
+                ],
+                "pagination": {
+                    "range": 20,
+                    "startIndex": page
                 },
-                'activeFiltre': True,
-                'pointGeolocDeReference': {
-                    'distance': 0
+                "activeFiltre": True,
+                "pointGeolocDeReference": {
+                    "distance": 0
                 },
-                'motsCles': param_search_words
+                "motsCles": param_search_words
             }
+            
+            
             response = post(root_path, json=payload)
             content = response.content
             
@@ -85,7 +100,12 @@ class scraping_jobs_apec(scraping_jobs):
             sleep(randint(8, 15))
             
             ### afficher les informations sur les requêtes
-            requests += 1 # incrémentation du nombre de requête         
+            requests += 1 # incrémentation du nombre de requête
+            #elapsed_time = time() - start_time
+            
+            ### avertir si le code status est différent de 200
+            #if response.status_code != 200:
+                #warn('Request: {}; Status code:{}'.format(requests, requests/elapsed_time))
             
             ### stopper quand les requêtes atteignent le quota
             if requests > jc.NB_REQUETE:
@@ -100,11 +120,11 @@ class scraping_jobs_apec(scraping_jobs):
             ### vérifier l'existence de l'index 'resultats'
             if 'resultats' in json_data:
                 result_containers = json_data['resultats']
-            
+                
                 ### extraction des données du JSON renvoyé
                 for result in result_containers:
-                    #print('https://www.apec.fr/candidat/recherche-emploi.html/emploi/detail-offre/'+result['numeroOffre'])
-            
+                    
+                    #
                     dict_jobs.append({
                         'title' : result['intitule'],
                         'link' : 'https://www.apec.fr/candidat/recherche-emploi.html/emploi/detail-offre/'+result['numeroOffre'],
