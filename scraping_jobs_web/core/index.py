@@ -40,14 +40,13 @@ class scraping_index(object):
             dict_jobs += dict_tmp
         
         ## indeed.fr
-        '''
         sjindeed = scraping_jobs_indeed(self.s_job, self.type_contract)
         sjindeed.set_city(self.city)
         sjindeed.set_code_dpt(self.code_dpt)
         dict_tmp = sjindeed.scrap_job()
         if len(dict_tmp) > 0:
             dict_jobs += dict_tmp
-        '''
+        
         ## monster.fr
         sjmonster = scraping_jobs_monster(self.s_job, self.type_contract)
         sjmonster.set_city(self.city)
