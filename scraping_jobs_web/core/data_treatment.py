@@ -60,6 +60,10 @@ def get_jobs(query, city, contract):
     jobs_dict = json.loads(scraping_index(params).scrap_all_jobs())
     #
     return_html = ""
+    if jobs_dict is None:
+        return return_html
+
+    
     # check if jobs found
     if len(jobs_dict) > 0:
         return_html += "<br/>"
