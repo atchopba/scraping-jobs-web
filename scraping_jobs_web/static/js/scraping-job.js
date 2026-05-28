@@ -16,6 +16,7 @@ $(document).ready(function(){
                     response($.map(data, function(obj) {
                         return obj.name +" ("+ obj.department_code +")";
                     }));
+                    if (!data) return;
                 },
                 error: function(result, status, error) {
                     alert("Erreur de la recherche de la ville");
