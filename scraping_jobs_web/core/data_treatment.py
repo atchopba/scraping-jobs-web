@@ -12,7 +12,6 @@
 import json
 import re
 
-from scraping_jobs_web.core.index import scraping_index, Params
 
 CITIES_JSON_FILE = "./scraping_jobs_web/static/data/json/cities.json"
 
